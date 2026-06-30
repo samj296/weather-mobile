@@ -99,8 +99,18 @@ export default function City({city}:Props){
 };
 
 const styles = StyleSheet.create({
-    container:{},
-    temp: {},
-    aboutCity: {},
-    cityName: {},
+    container:{
+        margin: 10,
+        padding: 10,
+        alignSelf: "center"
+    },
+    temp: {
+        alignSelf: "center"
+    },
+    aboutCity: {
+        alignSelf: "center",
+    },
+    cityName: {
+        alignSelf: "center"
+    },
 });

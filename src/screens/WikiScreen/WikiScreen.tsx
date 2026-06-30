@@ -15,7 +15,7 @@ type WikiInfo = {
     title: string,
     extract: string,
     originalimage?: {
-        source:string,
+        source: string | number,  //local image will be number
     },
     [key:string]: any,
 };
@@ -69,7 +69,11 @@ export default function WikiScreen(){
                 {wikiInfo.originalimage?.source && (
                     <TouchableOpacity style={styles.card} onPress={handleBackScreen}>
                         <Image
-                            source={{ uri: wikiInfo.originalimage.source }}
+                            source={
+                                typeof wikiInfo.originalimage.source ==="string"?
+                                { uri: wikiInfo.originalimage.source } : wikiInfo.originalimage.source}
+                                // if its a string that means it has to fetch if its number then load
+                                // the image that fatasyCity.js is giving
                             style={styles.image}
                             resizeMode="cover"
                         />
@@ -84,14 +88,35 @@ export default function WikiScreen(){
 };
 
 const styles = StyleSheet.create({
-    page: {},
-    title: {},
-    card:{},
-    about: {},
-    extract: {},
+    page: {
+          padding: 10,
+        borderStyle:"solid",
+        borderWidth: 5,
+        margin:10,
+        backgroundColor: "#ADD8E6",
+        
+    },
+    title: {
+        fontSize:30,
+        alignSelf: "center",
+    },
+    card:{
+        borderStyle: "solid",
+        borderWidth: 5,
+        padding: 10,
+        margin: 10
+    },
+    about: {
+        alignSelf:"center",
+        fontSize:20,
+        fontStyle: "italic"
+    },
+    extract: {
+        alignSelf: "center"
+    },
     image:{
-        width: "100%",
-        height: 250,
+        width: "auto",
+        height: 300,
         borderRadius: 10,
     },
 

@@ -91,7 +91,7 @@ export default function HomeScreen(){
     },[searchCity]);
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.screen}>
             <View style = {styles.card}>
                 <Text style = {styles.title}>
                     Welcome to Weather App
@@ -142,11 +142,46 @@ export default function HomeScreen(){
 };
 
 const styles = StyleSheet.create({
-    card: {},
-    title: {},
-    btn: {},
-    btnText: {},
-    input: {},
-    lable: {},
+    screen: {
+        backgroundColor: "#98AFC7",
+        
+        
+    },
+    card: {
+        padding: 10,
+        borderStyle:"solid",
+        borderWidth: 5,
+        margin:10,
+        backgroundColor: "#ADD8E6",
+        
+    },
+    title: {
+        fontSize: 30,
+        fontStyle:"italic",
+        alignSelf: "center"
+    },
+    btn: {
+        padding: 5,
+        alignSelf: "center",
+        borderStyle: "solid",
+        borderWidth: 3,
+        borderRadius: 10,
+        backgroundColor: "#3B3131",
+    },
+    btnText: {
+        color: "#EEEE"
+    },
+    input: {
+        margin: 10,
+        padding: 5,
+        borderStyle: "solid",
+        borderColor: "#000",
+        alignSelf: "center"
+    },
+    lable: {
+        margin: 10,
+        borderStyle: "solid",
+        alignSelf: "center"
+    },
     scroll: {},
 });
